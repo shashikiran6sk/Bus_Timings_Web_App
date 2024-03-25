@@ -9,7 +9,7 @@ export const DashboardMod = () => {
      
 
     return (    
-        <div  className=" h-screen flex justify-center m-8">
+        <div  className=" h-screen flex justify-center m-8 ">
             <Timings />
         </div>
         

@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 
 import axios from "axios";
+import { Heading } from "../components/Heading"
+import { InputBox } from "../components/InputBox"
+import { SubHeading } from "../components/SubHeading"
+import { BottomWarning } from "../components/BottomWarning"
 
 
 
@@ -19,12 +23,10 @@ export const Timings = () => {
     }, [source,destination])
 
     return <div >
-        <div className="font-bold mt-6 text-lg bg-slate-200 ">
-            BUS Timings...
-        </div>
+        
         <div > 
                 <br />
-                <div className="my-2 ">
+                {/* <div className="my-2 ">
 
                     <input onChange={(e) => {
                         const s=e.target.value.toUpperCase();
@@ -36,7 +38,34 @@ export const Timings = () => {
                         setDestination(e.target.value.toUpperCase())
                     }} type="text" placeholder="destination" className="bg-slate-100 w-full px-2 py-1 border rounded border-slate-200"></input>
 
-                </div>
+                </div> */}
+
+                    <div className="  flex justify-center">
+                        <div className="flex flex-col justify-center">
+                        <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
+                            <Heading label={"BUS Timings"} />
+                            <SubHeading label={"Enter Source and Destination to get timings"} />
+
+                            <InputBox onChange={(e) => {
+                                    const s=e.target.value.toUpperCase();
+                                    setSource(s)
+                                }} placeholder="Katpadi" label={"Source"} />
+
+                            <InputBox onChange={(e) => {
+                                    setDestination(e.target.value.toUpperCase())
+                                }} placeholder="Bagayam" label={"Destination"} />
+
+                            <div className="pt-4">
+                            
+                            </div>
+
+                            
+                        </div>
+                        </div>
+                    </div>
+
+
+
                 <br />
                 </div>
         <div>
@@ -48,15 +77,15 @@ export const Timings = () => {
 function User({user}) {
     
     //className="bg-slate-300 h-screen"
-    return <div className="flex justify-between bg-slate-300">
-        <div className="flex bg-slate-300">
+    return <div className="flex justify-between ">
+        <div className="flex ">
            
             <div className="flex flex-col justify-center h-ful">
-                <div >
+                <div className="flex justify-center">
                     {user.id}--
                     {user.Source}---&gt;
                     {user.Depature}<br />
-                    &nbsp  {user.Source_Time} ---&gt;
+                    {user.Source_Time} ---&gt;
                     {user.Depature_Time}
                     
                 </div>
