@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://official6sk:LLG7VqBahm9sTeT6@cluster0.o15jehe.mongodb.net/BUS_timings")
+mongoose.connect("Database instance")
 
 
 const timingSchema = new mongoose.Schema({
